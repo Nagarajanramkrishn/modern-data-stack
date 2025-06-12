@@ -1,0 +1,36 @@
+[0m18:42:34.108969 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75ac6c78d910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75ac6cb1e5a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75ac6c78d970>]}
+
+
+============================== 18:42:34.111072 | 4ec79901-186d-441a-9788-869f487bdd68 ==============================
+[0m18:42:34.111072 [info ] [MainThread]: Running with dbt=1.9.8
+[0m18:42:34.111431 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/nagarajan/.dbt', 'debug': 'False', 'warn_error': 'None', 'log_path': 'logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt init', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m18:43:47.539760 [error] [MainThread]: Encountered an error:
+
+[0m18:43:47.543084 [error] [MainThread]: Traceback (most recent call last):
+  File "/home/nagarajan/modern-data-stack/demo_dbt/env/lib/python3.12/site-packages/dbt/cli/requires.py", line 153, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nagarajan/modern-data-stack/demo_dbt/env/lib/python3.12/site-packages/dbt/cli/requires.py", line 103, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nagarajan/modern-data-stack/demo_dbt/env/lib/python3.12/site-packages/dbt/cli/main.py", line 477, in init
+    results = task.run()
+              ^^^^^^^^^^
+  File "/home/nagarajan/modern-data-stack/demo_dbt/env/lib/python3.12/site-packages/dbt/task/init.py", line 324, in run
+    project_name = self.get_valid_project_name()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nagarajan/modern-data-stack/demo_dbt/env/lib/python3.12/site-packages/dbt/task/init.py", line 278, in get_valid_project_name
+    name = click.prompt("Enter a name for your project (letters, digits, underscore)")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nagarajan/modern-data-stack/demo_dbt/env/lib/python3.12/site-packages/click/termui.py", line 168, in prompt
+    value = prompt_func(prompt)
+            ^^^^^^^^^^^^^^^^^^^
+  File "/home/nagarajan/modern-data-stack/demo_dbt/env/lib/python3.12/site-packages/click/termui.py", line 151, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m18:43:47.544989 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": false, "command_wall_clock_time": 73.46795, "process_in_blocks": "0", "process_kernel_time": 0.062935, "process_mem_max_rss": "96288", "process_out_blocks": "16", "process_user_time": 0.849129}
+[0m18:43:47.545452 [debug] [MainThread]: Command `dbt init` failed at 18:43:47.545359 after 73.47 seconds
+[0m18:43:47.545763 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75ac6c8d84d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75ac6bc394f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75ac6bc39e20>]}
+[0m18:43:47.546113 [debug] [MainThread]: Flushing usage events
+[0m18:43:48.679073 [debug] [MainThread]: An error was encountered while trying to flush usage events
