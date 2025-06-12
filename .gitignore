@@ -1,5 +1,0 @@
-demo_dbt/env/
-demo_dbt/logs/
-*.log
-__pycache__/
-.env
